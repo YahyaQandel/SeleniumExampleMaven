@@ -107,7 +107,7 @@ public class TestVodafoneLogin {
     }
     private void setDriverPath(){
         if (PATH_TO_WEBDRIVER == null){
-            PATH_TO_WEBDRIVER ="webdriver/chromedriver";
+            PATH_TO_WEBDRIVER ="src/test/resources/webdriver/chromedriver";
         }
     }
     @After

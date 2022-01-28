@@ -17,12 +17,13 @@ import java.io.IOException;
 import static org.junit.Assert.*;
 public class TestGoolgeHomePage {
 	    private static final String GOOGLE_TEST_URL = "https://www.google.com/?hl=en";
-	    public static final String PATH_TO_WEBDRIVER = System.getenv("CHROME_DRIVER_PATH");
+	    public  String PATH_TO_WEBDRIVER = System.getenv("CHROME_DRIVER_PATH");
 	    private WebDriver driver;
 
 	    @Before
 	    public void prepare() {
 			// setup
+			setDriverPath();
 			System.setProperty("webdriver.chrome.whitelistedIps", "");
 	        System.setProperty(
 	                "webdriver.chrome.driver",
@@ -60,5 +61,11 @@ public class TestGoolgeHomePage {
 	    public void teardown() throws IOException {
 	        driver.quit();
 	    }
+
+	private void setDriverPath(){
+		if (PATH_TO_WEBDRIVER == null){
+			PATH_TO_WEBDRIVER ="src/test/resources/webdriver/chromedriver";;
+		}
+	}
 
 	}
