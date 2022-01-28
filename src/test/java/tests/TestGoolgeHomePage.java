@@ -22,6 +22,7 @@ public class TestGoolgeHomePage {
 
 	    @Before
 	    public void prepare() {
+			// setup
 			System.setProperty("webdriver.chrome.whitelistedIps", "");
 	        System.setProperty(
 	                "webdriver.chrome.driver",
@@ -35,14 +36,17 @@ public class TestGoolgeHomePage {
 
 	    @Test
 	    public void useGoogleSearchBox(){
+			// start of action
 	    	WebElement searchInputField = waitForElementToBeVisible(By.name("q"));
 	    	searchInputField.sendKeys("Test Example By selenium");
 	    	waitForElementToBeVisible(By.name("btnK")).click();
 	    	String currentPageUrl = driver.getCurrentUrl();
-	    	assertTrue(currentPageUrl.contains("https://www.google.com/search?"));
+			// end of action
+			// start of assertion
+			assertTrue(currentPageUrl.contains("https://www.google.com/search?"));
 	    	assertTrue(currentPageUrl.contains("q=Test+Example+By+selenium"));
 	    	assertEquals(driver.getTitle(),"Test Example By selenium - Google Search");
-	    	
+			// end of assertion
 	    }
 	    
 	    private WebElement waitForElementToBeVisible(By selector) {
