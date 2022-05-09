@@ -38,7 +38,6 @@ public class TestVodafoneLogin {
         driver.get(VODAFONE_TEST_URL);
     }
 
-    @Test
     public void testAccountLogin() throws IOException, InterruptedException {
         openLoginLayout();
         loginToAccount();
