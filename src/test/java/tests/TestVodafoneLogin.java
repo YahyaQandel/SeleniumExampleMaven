@@ -33,8 +33,8 @@ public class TestVodafoneLogin {
     public void prepare() throws IOException {
         setAccountCredentialsIfNotSetOnEnvironment();
         WebDriverManager.chromedriver().setup();
-//      ChromeOptions chromeOptions = new ChromeOptions().setHeadless(true);
-        driver = new ChromeDriver();
+      ChromeOptions chromeOptions = new ChromeOptions().setHeadless(true);
+        driver = new ChromeDriver(chromeOptions);
         driver.get(VODAFONE_TEST_URL);
     }
 
