@@ -19,26 +19,22 @@ import java.util.List;
 import java.util.Properties;
 
 import static org.junit.Assert.*;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestVodafoneLogin {
 
     public static final String ACCOUNT_ICON_TITLE = "My Profile";
     private static final String VODAFONE_TEST_URL = "https://web.vodafone.com.eg/en/home";
-    public String PATH_TO_WEBDRIVER = System.getenv("CHROME_DRIVER_PATH");
     private WebDriver driver;
     ConfigParser props;
     private String vodafoneUserName = System.getenv("VODAFONE_USERNAME");
     private String vodafonePassword = System.getenv("VODAFONE_PASSWORD");
     @Before
     public void prepare() throws IOException {
-        setDriverPath();
         setAccountCredentialsIfNotSetOnEnvironment();
-        System.setProperty("webdriver.chrome.whitelistedIps", "");
-        System.setProperty(
-                "webdriver.chrome.driver",
-                PATH_TO_WEBDRIVER);
-        ChromeOptions chromeOptions = new ChromeOptions().setHeadless(true);
-        driver = new ChromeDriver(chromeOptions);
+        WebDriverManager.chromedriver().setup();
+//      ChromeOptions chromeOptions = new ChromeOptions().setHeadless(true);
+        driver = new ChromeDriver();
         driver.get(VODAFONE_TEST_URL);
     }
 
@@ -105,11 +101,7 @@ public class TestVodafoneLogin {
             vodafonePassword = props.getByKey("password");
         }
     }
-    private void setDriverPath(){
-        if (PATH_TO_WEBDRIVER == null){
-            PATH_TO_WEBDRIVER ="src/test/resources/webdriver/chromedriver";
-        }
-    }
+
     @After
     public void teardown() throws IOException {
         driver.quit();

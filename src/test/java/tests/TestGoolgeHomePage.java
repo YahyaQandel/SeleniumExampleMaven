@@ -1,5 +1,6 @@
 package tests;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,16 +23,9 @@ public class TestGoolgeHomePage {
 
 	    @Before
 	    public void prepare() {
-			// setup
-			setDriverPath();
-			System.setProperty("webdriver.chrome.whitelistedIps", "");
-	        System.setProperty(
-	                "webdriver.chrome.driver",
-	                PATH_TO_WEBDRIVER);
-	        // to run tests in headless mode
+			WebDriverManager.chromedriver().setup();
 			ChromeOptions chromeOptions = new ChromeOptions().setHeadless(true);
 			driver = new ChromeDriver(chromeOptions);
-//	        driver = new ChromeDriver();
 	        driver.get(GOOGLE_TEST_URL);
 	    }
 
