@@ -19,7 +19,7 @@ jobs:
       run: docker build -t yahyaqandel/maven-chrome .
     - uses: actions/checkout@v2
     - name: build and run tests
-      run: docker run yahyaqandel/maven-chrome
+      run: docker run --env JAVA_OPTS=-Dwebdriver.chrome.whitelistedIps= yahyaqandel/maven-chrome
       env:
         CHROME_DRIVER_PATH: /usr/bin/chromedriver
         VODAFONE_USERNAME: ${{ secrets.VODAFONE_USERNAME }}
