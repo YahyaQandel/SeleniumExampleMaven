@@ -18,9 +18,11 @@ public class MyAccount extends Base {
     }
 
     public String getAccountNameTitle(){
+        performWaitForElement(AccountHeadingTitle);
         return AccountHeadingTitle.getText();
     }
     public String getPageHeadingTitle(){
+        performWaitForElement(myProfileIconInlineText);
         return myProfileIconInlineText.getText();
     }
 }
