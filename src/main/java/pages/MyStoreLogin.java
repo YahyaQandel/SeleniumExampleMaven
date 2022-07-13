@@ -9,20 +9,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class MyStoreLogin  {
+public class MyStoreLogin extends Base{
 
-    WebDriver driver;
-    private final WebDriverWait wait;
     @FindBy(id="email")
     WebElement email;
     @FindBy(id="passwd")
     WebElement password;
-    private final String URL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
     public MyStoreLogin(WebDriver driver){
-        this.driver = driver;
-        wait = new WebDriverWait(driver, 15, 50);
-        PageFactory.initElements(driver, this);
-        this.driver.get(URL);
+        super(driver);
+        URL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
+        initElements(this);
     }
 
     public void setEmail(String emailText){
@@ -40,9 +36,7 @@ public class MyStoreLogin  {
         password.sendKeys(Keys.RETURN);
     }
 
-    private void performWaitForElement(WebElement element){
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
+
     /**
      * This POM method will be exposed in test case to login in the application
      * @param email
