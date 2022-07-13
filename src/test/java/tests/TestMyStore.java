@@ -28,7 +28,7 @@ public class TestMyStore {
         driver = new ChromeDriver(chromeOptions);
     }
     @Test
-    public void testAccountLogin() throws IOException, InterruptedException {
+    public void testAccountLogin() {
         MyStoreLogin myStoreLoginPage = new MyStoreLogin(driver);
         myStoreLoginPage.login(accountEmail,accountPassword);
         MyAccount myAccountPage = new MyAccount(driver);
