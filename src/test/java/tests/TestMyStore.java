@@ -6,12 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.io.IOException;
-
 import static org.junit.Assert.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import pages.MyAccount;
-import pages.MyStoreLogin;
+import pages.mystore.MyAccount;
+import pages.mystore.Login;
 
 public class TestMyStore {
 
@@ -29,7 +27,7 @@ public class TestMyStore {
     }
     @Test
     public void testAccountLogin() {
-        MyStoreLogin myStoreLoginPage = new MyStoreLogin(driver);
+        Login myStoreLoginPage = new Login(driver);
         myStoreLoginPage.login(accountEmail,accountPassword);
         MyAccount myAccountPage = new MyAccount(driver);
         assertTrue(myAccountPage.getAccountNameTitle().contains("Test User"));

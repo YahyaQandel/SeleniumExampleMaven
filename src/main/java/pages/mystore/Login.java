@@ -1,18 +1,19 @@
-package pages;
+package pages.mystore;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.Base;
 
 
-public class MyStoreLogin extends Base{
+public class Login extends Base {
 
     @FindBy(id="email")
     WebElement email;
     @FindBy(id="passwd")
     WebElement password;
-    public MyStoreLogin(WebDriver driver){
+    public Login(WebDriver driver){
         super(driver);
         URL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
         initElements(this);

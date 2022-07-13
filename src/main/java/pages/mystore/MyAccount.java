@@ -1,10 +1,11 @@
-package pages;
+package pages.mystore;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.Base;
 
-public class MyAccount extends Base{
+public class MyAccount extends Base {
 
     @FindBy(className="page-heading")
     WebElement myProfileIconInlineText;
