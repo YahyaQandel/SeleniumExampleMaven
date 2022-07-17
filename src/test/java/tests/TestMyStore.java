@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.config.parser.*;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -41,17 +42,10 @@ public class TestMyStore {
 
 
     private WebElement waitForElementToBeVisible(By selector) {
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         return wait.until(
                 ExpectedConditions.visibilityOfElementLocated(selector));
     }
-
-    private List<WebElement> waitForElementsToBeVisible(By selector) {
-        WebDriverWait wait = new WebDriverWait(driver, 20);
-        return wait.until(
-                ExpectedConditions.visibilityOfAllElementsLocatedBy(selector));
-    }
-
 
     @After
     public void teardown() throws IOException {
