@@ -36,10 +36,9 @@ public class Login extends Base {
 
 
     /**
-     * This POM method will be exposed in test case to login in the application
-     * @param email
-     * @param password
-     * @return
+     * This POM method will be exposed in test case to log in  the application
+     * @param email: user registered email
+     * @param password: user registered password
      */
 
     public void login(String email,String password){

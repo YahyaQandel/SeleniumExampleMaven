@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.IOException;
+import java.time.Duration;
 
 
 import static org.junit.Assert.*;
@@ -45,7 +46,7 @@ public class TestGoolgeHomePage {
 	    }
 	    
 	    private WebElement waitForElementToBeVisible(By selector) {
-	        WebDriverWait wait = new WebDriverWait(driver, 60);
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 	        return wait.until(
 	                ExpectedConditions.visibilityOfElementLocated(selector));
 	    }
