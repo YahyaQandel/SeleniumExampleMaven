@@ -19,7 +19,6 @@ import java.time.Duration;
 import static org.junit.Assert.*;
 public class TestGoolgeHomePage {
 	    private static final String GOOGLE_TEST_URL = "https://www.google.com/?hl=en";
-	    public  String PATH_TO_WEBDRIVER = System.getenv("CHROME_DRIVER_PATH");
 	    private WebDriver driver;
 
 	    @Before
@@ -53,14 +52,7 @@ public class TestGoolgeHomePage {
 	    
 	    
 	    @After
-	    public void teardown() throws IOException {
+	    public void teardown() {
 	        driver.quit();
 	    }
-
-	private void setDriverPath(){
-		if (PATH_TO_WEBDRIVER == null){
-			PATH_TO_WEBDRIVER ="src/test/resources/webdriver/chromedriver";;
-		}
-	}
-
 	}
