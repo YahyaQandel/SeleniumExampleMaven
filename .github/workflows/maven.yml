@@ -24,4 +24,4 @@ jobs:
         USER_PASSWORD: ${{ secrets.ACCPASSWORD }}
         JAVA_OPTS: -Dwebdriver.chrome.whitelistedIps=
       if: "${{ env.USER_EMAIL != '' }}"
-      run: echo $USER_EMAIL && env && source project.env.sh && env
+      run: docker run yahyaqandel/maven-chrome

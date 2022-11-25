@@ -36,8 +36,8 @@ public class TestMyStore {
         System.out.println(accountPassword);
         System.out.println(System.getenv("USER_EMAIL"));
         System.out.println(System.getenv("USER_PASSWORD"));
-        loginToAccount();
-        assertUserDetailsExistsInPage();
+//        loginToAccount();
+//        assertUserDetailsExistsInPage();
     }
 
     private void assertUserDetailsExistsInPage() {
