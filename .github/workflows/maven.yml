@@ -12,16 +12,13 @@ on:
 jobs:
   build:
 
+    container: yahyaqandel/mvn11-chrome
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: build docker image
-      run: docker build -t yahyaqandel/maven-chrome .
     - uses: actions/checkout@v2
     - name: build and run tests
       env:
         USER_EMAIL: ${{ secrets.ACCEMAIL }}
         USER_PASSWORD: ${{ secrets.ACCPASSWORD }}
         JAVA_OPTS: -Dwebdriver.chrome.whitelistedIps=
-      if: "${{ env.USER_EMAIL != '' }}"
-      run: docker run  -e USER_EMAIL=$USER_EMAIL -e USER_PASSWORD=$USER_PASSWORD yahyaqandel/maven-chrome
+      run: mvn -B package --file pom.xml
