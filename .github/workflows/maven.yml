@@ -19,8 +19,9 @@ jobs:
       run: docker build -t yahyaqandel/maven-chrome .
     - uses: actions/checkout@v2
     - name: build and run tests
-      run: env && docker run yahyaqandel/maven-chrome
       env:
         USER_EMAIL: ${{ secrets.ACCOUNT_EMAIL }}
         USER_PASSWORD: ${{ secrets.ACCOUNT_PASSWORD }}
         JAVA_OPTS: -Dwebdriver.chrome.whitelistedIps=
+      if: "${{ env.USER_EMAIL != '' }}"
+      run: echo "This command is executed if ACCOUNT_EMAIL secret IS NOT empty" && docker run yahyaqandel/maven-chrome
