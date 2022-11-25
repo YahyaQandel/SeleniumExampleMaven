@@ -21,6 +21,6 @@ jobs:
     - name: build and run tests
       run: docker run yahyaqandel/maven-chrome
       env:
-        VODAFONE_USERNAME: ${{ secrets.ACCOUNT_EMAIL }}
-        VODAFONE_PASSWORD: ${{ secrets.ACCOUNT_PASSWORD }}
+        ACCOUNT_EMAIL: ${{ secrets.ACCOUNT_EMAIL }}
+        ACCOUNT_PASSWORD: ${{ secrets.ACCOUNT_PASSWORD }}
         JAVA_OPTS: -Dwebdriver.chrome.whitelistedIps=

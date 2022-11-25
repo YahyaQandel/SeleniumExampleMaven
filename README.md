@@ -4,13 +4,9 @@
 
 
 ## To run test cases 
-###### make sure that you have the chrome browser version as the specified version  in the code
-###### add your vodafone account credentials to `config.properties` in order to be able to run login scenario
-
-### run tests from IDE
-###### using your run > configurations 
-
+set your own `ACCOUNT_EMAIL` and  `ACCOUNT_PASSWORD` in `project.env.sh`.
 ### run tests from command line ( cmd / terminal )
 ```bash
+bash project.env.sh
 mvn test
 ```
