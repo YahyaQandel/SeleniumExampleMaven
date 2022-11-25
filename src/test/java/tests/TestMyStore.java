@@ -20,13 +20,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestMyStore {
 
-    public static final String ACCOUNT_ICON_HEADER = "MY ACCOUNT";
     private static final String MYSTORE_URL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
     private WebDriver driver;
-    private String accountEmail = "test@automationclass.com";
-    private String accountPassword = "T7Qy5E$Bt!a4P!!";
+    private String accountEmail = "yahya.qandel@gmail.com";
+    private String accountPassword = "VDdReTVFIWE0UCEhCg";
     @Before
-    public void prepare() throws IOException {
+    public void prepare() throws  {
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--headless");
