@@ -31,13 +31,8 @@ public class TestMyStore {
     }
     @Test
     public void testAccountLogin() {
-        System.out.println("SECRETS");
-        System.out.println(accountEmail);
-        System.out.println(accountPassword);
-        System.out.println(System.getenv("USER_EMAIL"));
-        System.out.println(System.getenv("USER_PASSWORD"));
-//        loginToAccount();
-//        assertUserDetailsExistsInPage();
+        loginToAccount();
+        assertUserDetailsExistsInPage();
     }
 
     private void assertUserDetailsExistsInPage() {
