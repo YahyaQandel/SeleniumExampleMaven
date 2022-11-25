@@ -19,7 +19,7 @@ jobs:
       run: docker build -t yahyaqandel/maven-chrome .
     - uses: actions/checkout@v2
     - name: build and run tests
-      run: docker run yahyaqandel/maven-chrome
+      run: env && docker run yahyaqandel/maven-chrome
       env:
         USER_EMAIL: ${{ secrets.ACCOUNT_EMAIL }}
         USER_PASSWORD: ${{ secrets.ACCOUNT_PASSWORD }}
