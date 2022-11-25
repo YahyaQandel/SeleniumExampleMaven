@@ -16,8 +16,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestMyStore {
 
-    private String accountEmail = System.getenv("ACCOUNT_EMAIL");
-    private String accountPassword = System.getenv("ACCOUNT_PASSWORD");
+    private String accountEmail = System.getenv("USER_EMAIL");
+    private String accountPassword = System.getenv("USER_PASSWORD");
     private static final String MYSTORE_URL = "https://djangogreatkart.com/accounts/login/";
     private WebDriver driver;
 

@@ -7,6 +7,6 @@
 set your own `ACCOUNT_EMAIL` and  `ACCOUNT_PASSWORD` in `project.env.sh`.
 ### run tests from command line ( cmd / terminal )
 ```bash
-bash project.env.sh
+source project.env.sh
 mvn test
 ```
