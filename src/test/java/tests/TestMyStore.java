@@ -25,7 +25,7 @@ public class TestMyStore {
     public void prepare(){
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
-//        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--headless");
         driver = new ChromeDriver(chromeOptions);
         driver.get(MYSTORE_URL);
     }
