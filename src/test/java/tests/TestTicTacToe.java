@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
 
@@ -58,13 +59,13 @@ public class TestTicTacToe {
     }
 
     private WebElement waitForElementToBeVisible(By selector) {
-        WebDriverWait wait = new WebDriverWait(this.driver, 60);
+        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(60));
         return wait.until(
                 ExpectedConditions.visibilityOfElementLocated(selector));
     }
 
     private List<WebElement> waitForElementsToBeVisible(By selector) {
-        WebDriverWait wait = new WebDriverWait(this.driver, 60);
+        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(60));
         return wait.until(
                 ExpectedConditions.visibilityOfAllElementsLocatedBy(selector));
     }
