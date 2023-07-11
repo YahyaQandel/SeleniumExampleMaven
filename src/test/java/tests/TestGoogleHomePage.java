@@ -12,11 +12,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.io.IOException;
 
 
 import static org.junit.Assert.*;
-public class TestGoolgeHomePage {
+public class TestGoogleHomePage {
 	    private static final String GOOGLE_TEST_URL = "https://www.google.com/?hl=en";
 	    public  String PATH_TO_WEBDRIVER = System.getenv("CHROME_DRIVER_PATH");
 	    private WebDriver driver;
@@ -52,14 +51,7 @@ public class TestGoolgeHomePage {
 	    
 	    
 	    @After
-	    public void teardown() throws IOException {
+	    public void teardown() {
 	        driver.quit();
 	    }
-
-	private void setDriverPath(){
-		if (PATH_TO_WEBDRIVER == null){
-			PATH_TO_WEBDRIVER ="src/test/resources/webdriver/chromedriver";;
-		}
-	}
-
 	}
