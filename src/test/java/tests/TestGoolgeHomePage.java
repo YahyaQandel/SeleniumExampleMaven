@@ -25,6 +25,8 @@ public class TestGoolgeHomePage {
 	    public void prepare() {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions chromeOptions = new ChromeOptions().setHeadless(true);
+			chromeOptions.addArguments("--remote-allow-origins=*");
+
 			driver = new ChromeDriver(chromeOptions);
 	        driver.get(GOOGLE_TEST_URL);
 	    }
