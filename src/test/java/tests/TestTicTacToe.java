@@ -19,7 +19,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class TestTicTacToe {
-    private static final String _URL = "http://tictactoe.automationtesting.tech";
+    private static final String _URL = "https://tictactoe.automationtesting.tech";
     private WebDriver driver;
 
     @Before
