@@ -52,6 +52,7 @@ public class TestTicTacToe {
 
     @Test
     public void assertGoBackToCertainMoveWithValidHistory() {
+        // needs refactoring we will work on in the next example
         HashMap<Integer, HashMap<Integer, String>> boardState = new HashMap<>();
         this.playOn(0);
         this.updateBoardState(boardState, 0);
