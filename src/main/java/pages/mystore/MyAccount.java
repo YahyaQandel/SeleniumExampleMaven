@@ -7,22 +7,16 @@ import pages.Base;
 
 public class MyAccount extends Base {
 
-    @FindBy(className="page-heading")
-    WebElement myProfileIconInlineText;
-    @FindBy(className="account")
+    @FindBy(className="card-header")
     WebElement AccountHeadingTitle;
     public MyAccount(WebDriver driver){
         super(driver);
-        URL = "http://automationpractice.com/index.php?controller=my-account";
+        URL = "https://djangogreatkart.com/accounts/";
         initElements(this);
     }
 
-    public String getAccountNameTitle(){
+    public String getAccountHeadingTitle(){
         performWaitForElement(AccountHeadingTitle);
         return AccountHeadingTitle.getText();
-    }
-    public String getPageHeadingTitle(){
-        performWaitForElement(myProfileIconInlineText);
-        return myProfileIconInlineText.getText();
     }
 }

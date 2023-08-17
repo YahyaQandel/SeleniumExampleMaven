@@ -9,14 +9,15 @@ import pages.Base;
 
 public class Login extends Base {
 
-    @FindBy(id="email")
+    @FindBy(name="email")
     WebElement email;
-    @FindBy(id="passwd")
+    @FindBy(name="password")
     WebElement password;
     public Login(WebDriver driver){
         super(driver);
-        URL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
+        URL = "https://djangogreatkart.com/accounts/login/";
         initElements(this);
+        this.visit();
     }
 
     public void setEmail(String emailText){
@@ -45,6 +46,13 @@ public class Login extends Base {
         this.setEmail(email);
         this.setPassword(password);
         this.enterToLogin();
+    }
+
+    public MyAccount loginChaining(String email,String password){
+        this.setEmail(email);
+        this.setPassword(password);
+        this.enterToLogin();
+        return new MyAccount(driver);
     }
 
 }

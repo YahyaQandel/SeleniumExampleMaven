@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class Base {
-    WebDriver driver;
+    protected WebDriver driver;
     private final WebDriverWait wait;
     protected String URL;
     protected Base(WebDriver driver){
@@ -18,6 +18,9 @@ public class Base {
     }
     protected void initElements(Object child){
         PageFactory.initElements(driver, child);
+    }
+
+    public void visit(){
         this.driver.get(URL);
     }
     protected void performWaitForElement(WebElement element){
