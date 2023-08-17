@@ -20,17 +20,17 @@ public class Login extends Base {
         this.visit();
     }
 
-    public void setEmail(String emailText){
+    private void setEmail(String emailText){
         performWaitForElement(email);
         email.sendKeys(emailText);
     }
 
-    public void setPassword(String passwordText){
+    private void setPassword(String passwordText){
         performWaitForElement(password);
         password.sendKeys(passwordText);
     }
 
-    public void enterToLogin(){
+    private void enterToLogin(){
         performWaitForElement(password);
         password.sendKeys(Keys.RETURN);
     }

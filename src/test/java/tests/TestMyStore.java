@@ -36,9 +36,7 @@ public class TestMyStore {
     @Test
     public void testAccountLoginChaining() {
         // or use chaining
-        Login myStoreLoginPage = new Login(driver);
-        MyAccount myAccountPage = myStoreLoginPage.loginChaining(accountEmail,accountPassword);
-        assertTrue(myAccountPage.getAccountHeadingTitle().contains("Test User"));
+        assertTrue(new Login(driver).loginChaining(accountEmail,accountPassword).getAccountHeadingTitle().contains("Test User"));
 
     }
 
